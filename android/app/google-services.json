@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1033820906438",
+    "firebase_url": "https://monochromesalon.firebaseio.com",
+    "project_id": "monochromesalon",
+    "storage_bucket": "monochromesalon.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1033820906438:android:5a62e86a6e65d2b7e248c7",
+        "android_client_info": {
+          "package_name": "com.example.project_pi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1033820906438-dvcbf0sgjmp39a7e578fftp78plgcu3n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWm4aE-MixsFu6SKli_shpn9mR8LCeB3I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1033820906438-dvcbf0sgjmp39a7e578fftp78plgcu3n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
