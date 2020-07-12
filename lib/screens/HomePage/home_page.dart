@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project_pi/screens/HomePage/homebutton.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:project_pi/screens/ReservationHistory/history_page.dart';
 import 'package:project_pi/screens/ReservationPage/information_detail.dart';
-import 'package:project_pi/screens/ReservationPage/reservation_detail.dart';
 
 class HomePage extends StatefulWidget {
   static const String id = "HomePage";
@@ -62,7 +62,9 @@ class _HomePageState extends State<HomePage> {
                     HomeNavButton(
                       prefixIcon: Icons.list,
                       textbutton: 'Reservation History',
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, HistoryPage.id);
+                      },
                     ),
                     SizedBox(
                       height: 40.0,

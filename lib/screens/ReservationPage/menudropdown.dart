@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
+typedef onChangeCallback = void Function(dynamic);
+
 class MenuDropDown extends StatefulWidget {
   final String dropdownText;
   final String type;
-  MenuDropDown({this.dropdownText, this.type});
+  final onChangeCallback onChanged;
+  MenuDropDown({this.dropdownText, this.type, this.onChanged});
   @override
   _MenuDropDownState createState() => _MenuDropDownState();
 }
@@ -109,6 +112,7 @@ class _MenuDropDownState extends State<MenuDropDown> {
                 setState(() {
                   selectedItem = value;
                 });
+                widget.onChanged(value);
               }),
         ),
       ),

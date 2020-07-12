@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_pi/screens/HomePage/home_page.dart';
 import 'package:project_pi/screens/LoginPage/HalamanLogin.dart';
+import 'package:project_pi/screens/ReservationHistory/history_page.dart';
 import 'package:project_pi/screens/ReservationPage/confirmationorder.dart';
 import 'package:project_pi/screens/ReservationPage/information_detail.dart';
 import 'package:project_pi/screens/ReservationPage/reservation_detail.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         InformationDetail.id: (context) => InformationDetail(),
         ReservationDetail.id: (context) => ReservationDetail(),
         ConfirmationOrder.id: (context) => ConfirmationOrder(),
+        HistoryPage.id: (context) => HistoryPage(),
       },
     );
   }
