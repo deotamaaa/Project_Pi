@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:project_pi/screens/HomePage/home_page.dart';
@@ -24,14 +25,24 @@ class ConfirmationOrder extends StatefulWidget {
     this.selectedDate,
     this.selectedTime,
     String value,
+    FirebaseUser firebaseUser,
   });
   @override
   _ConfirmationOrderState createState() => _ConfirmationOrderState();
 }
 
 class _ConfirmationOrderState extends State<ConfirmationOrder> {
+  String userId;
   final _firestore = Firestore.instance;
   bool showSpinner = false;
+
+  getCurrentUser() async {
+    FirebaseUser firebaseUser = await FirebaseAuth.instance.currentUser();
+    setState(() {
+      userId = firebaseUser.uid;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -109,7 +120,8 @@ class _ConfirmationOrderState extends State<ConfirmationOrder> {
                       });
                       try {
                         final reservationData =
-                            await _firestore.collection('ReservationData').add({
+                            await _firestore.collection('UserAccount').add({
+                          'uid': userId,
                           'Cat Brreds': widget.catBreeds,
                           'Grooming Type': widget.groomingType,
                           'Cat Size': widget.catSize,

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -9,6 +10,13 @@ class HistoryPage extends StatefulWidget {
 
 class _HistoryPageState extends State<HistoryPage> {
   final _firestore = Firestore.instance;
+  String userId;
+  getCurrentUser() async {
+    FirebaseUser firebaseUser = await FirebaseAuth.instance.currentUser();
+    setState(() {
+      userId = firebaseUser.uid;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +35,10 @@ class _HistoryPageState extends State<HistoryPage> {
           Column(
             children: <Widget>[
               StreamBuilder<QuerySnapshot>(
-                stream: _firestore.collection('ReservationData').snapshots(),
+                stream: _firestore
+                    .collection('ReservationData')
+                    .where("userId", isEqualTo: userId)
+                    .snapshots(),
                 builder: (context, snapshot) {
                   if (!snapshot.hasData) {
                     return Center(

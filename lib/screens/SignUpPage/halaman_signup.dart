@@ -19,6 +19,7 @@ class _SignUpPageState extends State<SignUpPage> {
   String email;
   String password;
   String phoneNumber;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project_pi/screens/HomePage/homebutton.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:project_pi/screens/LiveMaps/live_maps.dart';
+import 'package:project_pi/screens/LoginPage/HalamanLogin.dart';
 import 'package:project_pi/screens/ReservationHistory/history_page.dart';
 import 'package:project_pi/screens/ReservationPage/information_detail.dart';
 
@@ -84,7 +85,10 @@ class _HomePageState extends State<HomePage> {
                       HomeNavButton(
                         prefixIcon: Icons.person,
                         textbutton: 'Account Profile',
-                        onPressed: () {},
+                        onPressed: () {
+                          FirebaseAuth.instance.signOut();
+                          Navigator.pushNamed(context, HalamanLogin.id);
+                        },
                       ),
                     ],
                   ),
