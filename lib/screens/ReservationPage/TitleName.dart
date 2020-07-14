@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class TitleName extends StatelessWidget {
   final String titleText;
   final IconData infoIcon;
+  final Function onPressed;
 
-  TitleName({this.titleText, this.infoIcon});
+  TitleName({this.titleText, this.infoIcon, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class TitleName extends StatelessWidget {
               infoIcon,
               size: 25.0,
             ),
-            onPressed: () {}),
+            onPressed: onPressed),
       ],
     );
   }

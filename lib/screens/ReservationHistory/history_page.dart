@@ -18,7 +18,7 @@ class _HistoryPageState extends State<HistoryPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Container(
-            margin: EdgeInsets.fromLTRB(25.0, 68.0, 70.0, 26.0),
+            margin: EdgeInsets.fromLTRB(25.0, 68.0, 70.0, 25.0),
             child: Text(
               'History',
               style: TextStyle(fontSize: 35.0),
@@ -64,7 +64,7 @@ class HistoryBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 50.0),
+      padding: const EdgeInsets.symmetric(horizontal: 25.0),
       child: Material(
         elevation: 5.0,
         child: Container(

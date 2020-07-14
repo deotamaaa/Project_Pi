@@ -62,6 +62,25 @@ class _InformationDetailState extends State<InformationDetail> {
                         TitleName(
                           titleText: 'Grooming Type',
                           infoIcon: Icons.info,
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    title: Text('Grooming Type'),
+                                    content: Text(
+                                      '1. Basic Grooming : Includes Bath, Blow Dry, Brush Out, Ears Cleaned, Nails Trimmed, Pads Shaved, Cologne, Bow \n2. Full Grooming : Includes Basic Grooming + Toothbrush + Trimming + Fur Treatmen + Skin Treatmen',
+                                    ),
+                                    actions: <Widget>[
+                                      FlatButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: Text('OK'))
+                                    ],
+                                  );
+                                });
+                          },
                         ),
                         MenuDropDown(
                           dropdownText: 'Grooming Type...',
@@ -83,6 +102,25 @@ class _InformationDetailState extends State<InformationDetail> {
                         TitleName(
                           titleText: 'Cat Size',
                           infoIcon: Icons.info,
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    title: Text('Grooming Type'),
+                                    content: Text(
+                                      '1.Small Cat IDR 225 - 275k\n2.Medium Cat IDR 275 - 350k\n3.Large Cat IDR 3.350 - 425k\n4.Extra Large Cat IDR 425 - 500k',
+                                    ),
+                                    actions: <Widget>[
+                                      FlatButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: Text('OK'))
+                                    ],
+                                  );
+                                });
+                          },
                         ),
                         MenuDropDown(
                           dropdownText: 'Cat Size...',
@@ -187,6 +225,25 @@ class _InformationDetailState extends State<InformationDetail> {
                         TitleName(
                           titleText: 'Additional Notes',
                           infoIcon: Icons.info,
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    title: Text('Grooming Type'),
+                                    content: Text(
+                                      'Please write down about Cat condition or physical problems such as fierce, aggresive, etc.\nFor our preparation of workmanship and estimated time of processing later',
+                                    ),
+                                    actions: <Widget>[
+                                      FlatButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: Text('OK'))
+                                    ],
+                                  );
+                                });
+                          },
                         ),
                         Container(
                           width: 320,
@@ -220,22 +277,25 @@ class _InformationDetailState extends State<InformationDetail> {
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           child: IconButton(
-                              icon: Icon(Icons.arrow_forward),
-                              onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => ConfirmationOrder(
-                                          catSize: catSize,
-                                          groomingType: groomingType,
-                                          catBreeds: catBreeds,
-                                          addOnServices: addOnServices,
-                                          selectedDate: selectedDate
-                                              .toString()
-                                              .split(' ')[0],
-                                          selectedTime: selectedTime.toString(),
-                                          addressText: addressText,
-                                          addNotes: addNotes,
-                                        )));
-                              }),
+                            icon: Icon(Icons.arrow_forward),
+                            onPressed: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => ConfirmationOrder(
+                                    catSize: catSize,
+                                    groomingType: groomingType,
+                                    catBreeds: catBreeds,
+                                    addOnServices: addOnServices,
+                                    selectedDate:
+                                        selectedDate.toString().split(' ')[0],
+                                    selectedTime: selectedTime.toString(),
+                                    addressText: addressText,
+                                    addNotes: addNotes,
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
                         ),
                       ],
                     ),
