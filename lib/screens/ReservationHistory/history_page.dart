@@ -11,6 +11,14 @@ class HistoryPage extends StatefulWidget {
 class _HistoryPageState extends State<HistoryPage> {
   final _firestore = Firestore.instance;
   String userId;
+
+
+  @override
+  void initState() {
+    super.initState();
+    getCurrentUser();
+  }
+  
   getCurrentUser() async {
     FirebaseUser firebaseUser = await FirebaseAuth.instance.currentUser();
     setState(() {
@@ -37,7 +45,7 @@ class _HistoryPageState extends State<HistoryPage> {
               StreamBuilder<QuerySnapshot>(
                 stream: _firestore
                     .collection('ReservationData')
-                    .where("userId", isEqualTo: userId)
+                    .where("uid", isEqualTo: userId)
                     .snapshots(),
                 builder: (context, snapshot) {
                   if (!snapshot.hasData) {
@@ -75,7 +83,7 @@ class HistoryBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 25.0),
+      padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
       child: Material(
         elevation: 5.0,
         child: Container(

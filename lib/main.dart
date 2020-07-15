@@ -5,7 +5,6 @@ import 'package:project_pi/screens/LoginPage/HalamanLogin.dart';
 import 'package:project_pi/screens/ReservationHistory/history_page.dart';
 import 'package:project_pi/screens/ReservationPage/confirmationorder.dart';
 import 'package:project_pi/screens/ReservationPage/information_detail.dart';
-import 'package:project_pi/screens/ReservationPage/reservation_detail.dart';
 import 'package:project_pi/screens/SignUpPage/halaman_signup.dart';
 
 void main() {
@@ -28,7 +27,6 @@ class MyApp extends StatelessWidget {
         SignUpPage.id: (context) => SignUpPage(),
         HomePage.id: (context) => HomePage(),
         InformationDetail.id: (context) => InformationDetail(),
-        ReservationDetail.id: (context) => ReservationDetail(),
         ConfirmationOrder.id: (context) => ConfirmationOrder(),
         HistoryPage.id: (context) => HistoryPage(),
         LiveMaps.id: (context) => LiveMaps(),

@@ -36,6 +36,12 @@ class _ConfirmationOrderState extends State<ConfirmationOrder> {
   final _firestore = Firestore.instance;
   bool showSpinner = false;
 
+  @override
+  void initState() {
+    super.initState();
+    getCurrentUser();
+  }
+
   getCurrentUser() async {
     FirebaseUser firebaseUser = await FirebaseAuth.instance.currentUser();
     setState(() {
@@ -120,12 +126,13 @@ class _ConfirmationOrderState extends State<ConfirmationOrder> {
                       });
                       try {
                         final reservationData =
-                            await _firestore.collection('UserAccount').add({
+                            await _firestore.collection('ReservationData').add({
                           'uid': userId,
                           'Cat Brreds': widget.catBreeds,
                           'Grooming Type': widget.groomingType,
                           'Cat Size': widget.catSize,
                           'AddOn': widget.addOnServices,
+                          'Address': widget.addressText,
                           'Reservation Date': widget.selectedDate,
                           'Reservation Time': widget.selectedTime,
                           'Add Notes': widget.addNotes,

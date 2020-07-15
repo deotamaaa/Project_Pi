@@ -40,60 +40,62 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: Expanded(
           child: Container(
-            child: Column(
-              children: <Widget>[
-                Container(
-                  margin: EdgeInsets.fromLTRB(25.0, 68.0, 256.0, 47.0),
-                  child: Text(
-                    'Home',
-                    style: TextStyle(fontSize: 35.0),
+            child: SingleChildScrollView(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.fromLTRB(25.0, 68.0, 256.0, 47.0),
+                    child: Text(
+                      'Home',
+                      style: TextStyle(fontSize: 35.0),
+                    ),
                   ),
-                ),
-                Center(
-                  child: Column(
-                    children: <Widget>[
-                      HomeNavButton(
-                        prefixIcon: Icons.date_range,
-                        textbutton: 'Make Reservation',
-                        onPressed: () {
-                          Navigator.pushNamed(context, InformationDetail.id);
-                        },
-                      ),
-                      SizedBox(
-                        height: 40.0,
-                      ),
-                      HomeNavButton(
-                        prefixIcon: Icons.list,
-                        textbutton: 'Reservation History',
-                        onPressed: () {
-                          Navigator.pushNamed(context, HistoryPage.id);
-                        },
-                      ),
-                      SizedBox(
-                        height: 40.0,
-                      ),
-                      HomeNavButton(
-                        prefixIcon: Icons.gps_fixed,
-                        textbutton: 'Live Maps Track',
-                        onPressed: () {
-                          Navigator.pushNamed(context, LiveMaps.id);
-                        },
-                      ),
-                      SizedBox(
-                        height: 40.0,
-                      ),
-                      HomeNavButton(
-                        prefixIcon: Icons.person,
-                        textbutton: 'Account Profile',
-                        onPressed: () {
-                          FirebaseAuth.instance.signOut();
-                          Navigator.pushNamed(context, HalamanLogin.id);
-                        },
-                      ),
-                    ],
+                  Center(
+                    child: Column(
+                      children: <Widget>[
+                        HomeNavButton(
+                          prefixIcon: Icons.date_range,
+                          textbutton: 'Make Reservation',
+                          onPressed: () {
+                            Navigator.pushNamed(context, InformationDetail.id);
+                          },
+                        ),
+                        SizedBox(
+                          height: 40.0,
+                        ),
+                        HomeNavButton(
+                          prefixIcon: Icons.list,
+                          textbutton: 'Reservation History',
+                          onPressed: () {
+                            Navigator.pushNamed(context, HistoryPage.id);
+                          },
+                        ),
+                        SizedBox(
+                          height: 40.0,
+                        ),
+                        HomeNavButton(
+                          prefixIcon: Icons.gps_fixed,
+                          textbutton: 'Live Maps Track',
+                          onPressed: () {
+                            Navigator.pushNamed(context, LiveMaps.id);
+                          },
+                        ),
+                        SizedBox(
+                          height: 40.0,
+                        ),
+                        HomeNavButton(
+                          prefixIcon: Icons.person,
+                          textbutton: 'Account Profile',
+                          onPressed: () {
+                            FirebaseAuth.instance.signOut();
+                            Navigator.pushNamed(context, HalamanLogin.id);
+                          },
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

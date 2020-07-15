@@ -84,7 +84,6 @@ class _SignUpPageState extends State<SignUpPage> {
                             final newUser =
                                 await _auth.createUserWithEmailAndPassword(
                                     email: email, password: password);
-
                             _firestore.collection('UserAccount').add({
                               'Email Address': email,
                               'Full Name': nama,
