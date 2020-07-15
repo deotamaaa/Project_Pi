@@ -65,8 +65,8 @@ class _HalamanLoginState extends State<HalamanLogin> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget>[
-                        Text(
-                            'Remember Me'), //TODOS: REMEMBER ME BLEOM BISA DIPENCET ANJGG
+                        SizedBox(width: 50.0),
+                        // Text('Remember Me'),
                         InkWell(
                           onTap: () {},
                           child: Text(

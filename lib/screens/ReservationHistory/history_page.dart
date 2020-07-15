@@ -12,13 +12,12 @@ class _HistoryPageState extends State<HistoryPage> {
   final _firestore = Firestore.instance;
   String userId;
 
-
   @override
   void initState() {
     super.initState();
     getCurrentUser();
   }
-  
+
   getCurrentUser() async {
     FirebaseUser firebaseUser = await FirebaseAuth.instance.currentUser();
     setState(() {

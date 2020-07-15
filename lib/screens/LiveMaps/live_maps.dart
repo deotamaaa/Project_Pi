@@ -103,11 +103,19 @@ class _LiveMapsState extends State<LiveMaps> {
           },
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.location_searching),
-          onPressed: () {
-            getCurrentLocation();
-          }),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.fromLTRB(50.0, 0, 10.0, 10.0),
+            child: FloatingActionButton(
+                child: Icon(Icons.location_searching),
+                onPressed: () {
+                  getCurrentLocation();
+                }),
+          ),
+        ],
+      ),
     );
   }
 }

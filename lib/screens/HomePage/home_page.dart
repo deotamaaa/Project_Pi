@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_pi/screens/AccountProfile/account_profile.dart';
 import 'package:project_pi/screens/HomePage/homebutton.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:project_pi/screens/LiveMaps/live_maps.dart';
@@ -38,65 +39,60 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Expanded(
-          child: Container(
-            child: SingleChildScrollView(
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    margin: EdgeInsets.fromLTRB(25.0, 68.0, 256.0, 47.0),
-                    child: Text(
-                      'Home',
-                      style: TextStyle(fontSize: 35.0),
-                    ),
-                  ),
-                  Center(
-                    child: Column(
-                      children: <Widget>[
-                        HomeNavButton(
-                          prefixIcon: Icons.date_range,
-                          textbutton: 'Make Reservation',
-                          onPressed: () {
-                            Navigator.pushNamed(context, InformationDetail.id);
-                          },
-                        ),
-                        SizedBox(
-                          height: 40.0,
-                        ),
-                        HomeNavButton(
-                          prefixIcon: Icons.list,
-                          textbutton: 'Reservation History',
-                          onPressed: () {
-                            Navigator.pushNamed(context, HistoryPage.id);
-                          },
-                        ),
-                        SizedBox(
-                          height: 40.0,
-                        ),
-                        HomeNavButton(
-                          prefixIcon: Icons.gps_fixed,
-                          textbutton: 'Live Maps Track',
-                          onPressed: () {
-                            Navigator.pushNamed(context, LiveMaps.id);
-                          },
-                        ),
-                        SizedBox(
-                          height: 40.0,
-                        ),
-                        HomeNavButton(
-                          prefixIcon: Icons.person,
-                          textbutton: 'Account Profile',
-                          onPressed: () {
-                            FirebaseAuth.instance.signOut();
-                            Navigator.pushNamed(context, HalamanLogin.id);
-                          },
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+        child: Container(
+          child: Column(
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.fromLTRB(25.0, 68.0, 256.0, 47.0),
+                child: Text(
+                  'Home',
+                  style: TextStyle(fontSize: 35.0),
+                ),
               ),
-            ),
+              Center(
+                child: Column(
+                  children: <Widget>[
+                    HomeNavButton(
+                      prefixIcon: Icons.date_range,
+                      textbutton: 'Make Reservation',
+                      onPressed: () {
+                        Navigator.pushNamed(context, InformationDetail.id);
+                      },
+                    ),
+                    SizedBox(
+                      height: 40.0,
+                    ),
+                    HomeNavButton(
+                      prefixIcon: Icons.list,
+                      textbutton: 'Reservation History',
+                      onPressed: () {
+                        Navigator.pushNamed(context, HistoryPage.id);
+                      },
+                    ),
+                    SizedBox(
+                      height: 40.0,
+                    ),
+                    HomeNavButton(
+                      prefixIcon: Icons.gps_fixed,
+                      textbutton: 'Live Maps Track',
+                      onPressed: () {
+                        Navigator.pushNamed(context, LiveMaps.id);
+                      },
+                    ),
+                    SizedBox(
+                      height: 40.0,
+                    ),
+                    HomeNavButton(
+                      prefixIcon: Icons.person,
+                      textbutton: 'Account Profile',
+                      onPressed: () {
+                        Navigator.pushNamed(context, AccountProfile.id);
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
       ),

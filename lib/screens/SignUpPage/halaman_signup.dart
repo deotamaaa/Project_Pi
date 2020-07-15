@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_pi/screens/HomePage/home_page.dart';
+import 'package:project_pi/screens/LoginPage/HalamanLogin.dart';
 import 'inputform_signup.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
@@ -19,6 +20,7 @@ class _SignUpPageState extends State<SignUpPage> {
   String email;
   String password;
   String phoneNumber;
+  String userId;
 
   @override
   Widget build(BuildContext context) {
@@ -85,6 +87,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 await _auth.createUserWithEmailAndPassword(
                                     email: email, password: password);
                             _firestore.collection('UserAccount').add({
+                              'uid': newUser.user.uid,
                               'Email Address': email,
                               'Full Name': nama,
                               'Phone Number': phoneNumber,
@@ -116,13 +119,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         ),
                       ),
                       onTap: () {
-                        AlertDialog(
-                          title: Text("Finish?"),
-                          content: Text("Are you sure with the data?"),
-                          actions: <Widget>[
-                            FlatButton(onPressed: null, child: null)
-                          ],
-                        );
+                        Navigator.pushNamed(context, HalamanLogin.id);
                       },
                     ),
                   ],

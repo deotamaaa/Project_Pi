@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_pi/screens/AccountProfile/account_profile.dart';
 import 'package:project_pi/screens/HomePage/home_page.dart';
 import 'package:project_pi/screens/LiveMaps/live_maps.dart';
 import 'package:project_pi/screens/LoginPage/HalamanLogin.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         ConfirmationOrder.id: (context) => ConfirmationOrder(),
         HistoryPage.id: (context) => HistoryPage(),
         LiveMaps.id: (context) => LiveMaps(),
+        AccountProfile.id: (context) => AccountProfile(),
       },
     );
   }
